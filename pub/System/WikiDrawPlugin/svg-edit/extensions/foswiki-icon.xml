@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<!-- 
+	Sample icons file. This file looks like an SVG file with groups as its
+	children. Each group element has an ID that must match the ID of the button given
+	in the extension. The SVG inside the group makes up the actual icon, and
+	needs use a viewBox instead of width/height for it to scale	properly.
+	
+	Multiple icons can be included, each within their own group.
+-->
+	<g id="foswiki_save">
+		<svg width="102" height="102" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		 <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+		 <g>
+		  <title>Layer 1</title>
+		  <rect ry="30" rx="30" x="2.5" y="2.5" width="97" height="97" id="svg_3" fill="#0000d0" stroke="#000000" stroke-width="5"/>
+		  <text x="52.668" y="62.5" id="svg_1" fill="#ffffff" stroke="#00dddd" stroke-width="0" font-size="58" font-family="Monospace" text-anchor="middle" xml:space="preserve">FOS</text>
+		 </g>
+		</svg>
+	</g>
+	<g id="foswiki_cancel">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+ <defs>
+  <linearGradient y2="0.65625" x2="0.94141" y1="0.43359" x1="0.42969" id="svg_9">
+   <stop stop-opacity="1" stop-color="#ff3838" offset="0"/>
+   <stop stop-opacity="1" stop-color="#7a0c0c" offset="1"/>
+  </linearGradient>
+ </defs>
+  <path stroke="#550000" fill="url(#svg_9)" id="svg_101" d="m2.10526,10.52632l7.36842,0l0,-7.36842l3.68421,0l0,7.36842l7.36842,0l0,3.68421l-7.36842,0l0,7.36842l-3.68421,0l0,-7.36842l-7.36842,0l0,-3.68421z" transform="rotate(45, 11.3, 12.3)"/>
+ </svg>
+	</g>
+</svg>

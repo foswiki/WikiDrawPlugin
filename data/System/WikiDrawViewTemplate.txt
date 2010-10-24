@@ -1,0 +1,17 @@
+%META:TOPICINFO{author="ProjectContributor" date="1231502400" format="1.1" version="1.1"}%
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"content"}%<div class="foswikiTopicText">
+---++ Image Annotation %QUERY{CallingTopic}%
+This is %QUERY{CallingTopic}%'s annotation of the image =%QUERY{Annotate}%=
+%WIKIDRAW{
+   "%WEB%.%TOPIC%"
+    annotate="%QUERY{Annotate}%"
+}%
+#TopicEnd
+</div>%TMPL:END%
+
+%TMPL:DEF{"attachments"}%%TMPL:END%
+%TMPL:DEF{"form"}%%TMPL:END%
+
+%META:PREFERENCE{name="VIEW_TEMPLATE" title="VIEW_TEMPLATE" type="Set" value="SkinTemplateView"}%

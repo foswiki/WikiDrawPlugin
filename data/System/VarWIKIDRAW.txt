@@ -1,0 +1,18 @@
+%META:TOPICINFO{author="ProjectContributor" date="1231502400" format="1.1" version="$Rev$"}%
+%META:TOPICPARENT{name="Macros"}%
+#VarENCODE
+---+++ WIKIDRAW{"drawing"} -- displays a vector drawing that can be edited in the wiki
+   * Encode character sequences in ="string"=, by mapping characters (or sequences of characters) to an alternative character (or sequence of characters). This macro can be used to encode strings for use in URLs, to encode to HTML entities, to protect quotes, and for as many other uses as you can imagine.
+   * Syntax: =%<nop>WIKIDRAW{"string" annotate="image"}%=
+     | *Parameter* | *Description* | *Default* |
+     | ="drawing"= | name of the drawing - specifies the location to save to - can be either ="Web.SomeTopic"= or ="drawing"= or (BROKEN "Web.Topic/drawing") \
+     %BR% where the first form saves the svg to the topic text, and the other saves to an attachment in the current topic, the third an attachment in the specified topic \
+     %BR% If you specify a drawing file that does not yet exist in your Wiki, the drawing is created  the first time you save a drawing. | _must be set_ |
+     | =annotation="imagename"= | specifies an image that will be used as a background for your annotations \
+     ="Web.SomeTopic"= (picks the first attached image) or ="image.png"= (current topic) or ="Web.Topic/image.jpg"= (an attachemt to the specified topic) \
+     %BR% it will not be modified, and will not form part of the svg output. | "" |
+
+If you omit either parameter, the Plugin attempts to do the right thing, but for now, this is experimental.
+
+
+%IF{"'%INCLUDINGTOPIC%'='WikiDrawPlugin'" else="   * Related: %SYSTEMWEB%.WikiDrawPlugin"}%

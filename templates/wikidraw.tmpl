@@ -1,0 +1,87 @@
+
+%TMPL:DEF{svg-view-iframe}%<!-- svg-view-iframe -->
+%TMPL:P{context="ImagePluginEnabled" then="svg-view-imageplugin" else="svg-view-html"}%
+<!-- end svg-view-iframe -->%TMPL:END%
+
+
+%{ --- non-ImapgePlugin version.------------------------- }%
+%TMPL:DEF{svg-view-html}%<div class="wikiDrawing">
+<img id="%IMG_ID%" class="wikiDraw wikiDrawView" src="%IF{"%DRAWINGEXISTS%" then="%IMAGEURL%" else="%ANNOTATE%"}%" />
+%BR%
+[[%SCRIPTURL{edit}%/%BASEWEB%/%BASETOPIC%?template=WikiDrawEdit;drawing=%DRAWING%;topicbased=%DRAWINGFILE%;annotateurl=%ANNOTATE%;returnto=%SCRIPTURL{view}%/%BASEWEB%/%BASETOPIC%][%IF{
+                     "%DRAWINGEXISTS%"
+                     then="%MAKETEXT{Edit}%"
+                     else="%MAKETEXT{Create}%"
+   }% %DRAWING%]] - <span class="wikiDrawComment">%COMMENT%</span>
+</div>
+%ADDTOZONE{ 
+   "script"
+   id="pngie-init" 
+   requires="JQUERYPLUGIN"
+   text="%TMPL:P{jquery-pngie-init}%"
+   
+}%%ADDTOZONE{ 
+   "head"
+   id="wikidraw-css" 
+   text="%TMPL:P{wikidraw-view-css}%"
+   
+}%%TMPL:END%
+
+%{ -------------------------------------- TODO make IE specific , and / or move into JQueryPlugin. }%
+%TMPL:DEF{jquery-pngie-init}%<script type='text/javascript' src='%PUBURL%/%SYSTEMWEB%/WikiDrawPlugin/pngie/jquery.pngie.min.js?version=0.1'></script>
+<script>
+$(document).pngie({
+blankgif:'%PUBURL%/%SYSTEMWEB%/WikiDrawPlugin/pngie/Transparent.gif',
+sizingMethod:'crop'
+ });
+</script>%TMPL:END%
+
+
+%{ ---------------------------- }%
+%TMPL:DEF{wikidraw-view-css}%<style>
+.wikiDrawing {
+border: 0px solid gray;
+}
+.wikiDrawing #%IMG_ID%  {
+    background: url(%ANNOTATE%) no-repeat;
+}
+</style>%TMPL:END%
+
+%{ --- ImagePlugin version.------------------------- }%
+%TMPL:DEF{svg-view-imageplugin}%<div class="wikiDrawing">%IMAGE{
+   "%IF{"%DRAWINGEXISTS%" then="%IMAGEPATH%" else="%ANNOTATE%"}%"
+   type="frame"
+   id="%IMG_ID%" 
+   class="wikiDraw wikiDrawView"
+   caption="[[%SCRIPTURL{edit}%/%BASEWEB%/%BASETOPIC%?template=WikiDrawEdit;drawing=%DRAWING%;topicbased=%DRAWINGFILE%;annotateurl=%ANNOTATE%;returnto=%SCRIPTURL{view}%/%BASEWEB%/%BASETOPIC%][%IF{
+                     "%DRAWINGEXISTS%"
+                     then="%MAKETEXT{Edit}%"
+                     else="%MAKETEXT{Create}%"
+   }% %DRAWING%]] - %COMMENT%"
+}%
+</div>
+%ADDTOZONE{ 
+   "script"
+   id="pngie-init" 
+   requires="JQUERYPLUGIN"
+   text="%TMPL:P{jquery-pngie-init}%"
+   
+}%%ADDTOZONE{ 
+   "head"
+   id="wikidraw-imageplugin-css" 
+   text="%TMPL:P{wikidraw-view-css-imageplugin}%"
+   
+}%%TMPL:END%
+
+%{ ---------------------------- }%
+%TMPL:DEF{wikidraw-view-css-imageplugin}%<style>
+.wikiDrawing #%IMG_ID% img {
+    background: url(%ANNOTATE%) no-repeat;
+}
+</style>%TMPL:END%
+
+%{ -----UNUSED&UNSUPPORTED----------------------- }%
+%TMPL:DEF{svg-edit-iframe}%<iframe src="%PUBURL%/%SYSTEMWEB%/WikiDrawPlugin/svg-edit/svg-editor.html?%PARAMS%" width="%WIDTH%" height="%HEIGHT%" >
+loading SVG-EDIT...
+</iframe>%TMPL:END%
+

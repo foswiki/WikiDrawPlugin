@@ -1,0 +1,86 @@
+%META:TOPICINFO{author="BaseUserMapping_333" date="1287891802" format="1.1" version="2"}%
+---+!! !WikiDrawPlugin
+<img class="foswikiRight" src="%ATTACHURLPATH%/WikiDrawExample.png" alt="Create Drawings, or add notes to Images" width='340' height='349' />
+
+<!--
+One line description, required for extensions repository catalog.
+BuildContrib will fill in the SHORTDESCRIPTION with the value of
+$SHORTDESCRIPTION from the .pm module, or you can redefine it here if you
+prefer.
+   * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
+-->
+%SHORTDESCRIPTION%
+
+
+
+%TOC%
+
+---++ Usage
+
+!WikiDrawPlugin uses [[http://code.google.com/p/svg-edit/][SVG-edit]] (trunk svn from 29/09/2010 - pre2.6) to provide quick and easy drawing or annotation of images. 
+
+__WARNING: editing not compatible with InternetExplorer - but viewing of the drawings works correctly__
+
+---+++ Syntax Rules
+%INCLUDE{%SYSTEMWEB%.VarWIKIDRAW}%
+---++++ save drawing as attachment to current topic
+<verbatim>
+   %WIKIDRAW{
+      "drawing"
+      annotate="http://somewhere.onthenet.com/some_image.png" 
+   }%
+</verbatim>
+
+---++++ save drawing to a 'WikiDrawForm' topic
+!WikiDraw also can save the svg source for the drawing as the text of a topic - allowing searching and hand editing of that source, while continuing to provide the wysiwyg editing facility.
+<verbatim>
+   %WIKIDRAW{
+      "Sandbox.WikiDrawing"
+      annotate="Sandbox.SomeImage/some_image.png" 
+   }%
+</verbatim>
+
+---+++ Extra Plugin support.
+If Foswiki:Extensions.ImagePlugin is installed and enabled, the default skin template will automatically use it to lay out the image and drawing.
+   
+---++ Technical details
+This plugin adds a ext-foswiki.js extension that over-rides the built in 'Save Image' SVG menu item with a save to foswiki handler, 
+which generates a png version of the overlay, and sends that, and the svg source to foswiki.
+
+The transparent overlay png is displayed in view mode, and the annotated image (if any) will be put behind it using the css background.
+
+---++ Known issues:
+   1 it really doesn't like using svg dimensions other than 640x480 (I'e reported an [[http://code.google.com/p/svg-edit/issues/detail?id=727][issue] for this, as its really painful when creating a drawing)
+   6 hide the edit buttons for ie..
+   1 _DEFAULT="Web.Topic/something" is very broken
+   6 =strikeone= support
+   7 comment support..
+   8 wow. subtle bug. - using =%!WIKIDRAW{Sandbox.SomeTopic}%=, _will_ find the first image attached to BASETOPIC, which might be a tad surprising.
+---+++ features to be added?
+   5 can we diff the svg's ?
+
+ 
+---++ Installation Instructions
+
+%$INSTALL_INSTRUCTIONS%
+
+---++ Info
+
+Many thanks to the following sponsors for supporting this work:
+   * TRIN, The Taxonomic Information Network for Australian National Biodiversity Research
+
+|  Author(s): | Foswiki:Main.SvenDowideit |
+|  Copyright: | &copy; 2010 SvenDowideit@fosiki.com and SVG-edit contributors and David Belais (pngIE) |
+|  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] and Apache License 2.0 for SVG-edit |
+|  Release: | %$RELEASE% |
+|  Version: | %$VERSION% |
+|  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  21 October 2010: | initial public release |
+|  Dependencies: | %$DEPENDENCIES% |
+|  Home page: | http://foswiki.org/bin/view/Extensions/WikiDrawPlugin |
+|  Support: | http://foswiki.org/bin/view/Support/WikiDrawPlugin |
+
+<!-- Do _not_ attempt to edit this topic; it is auto-generated. -->
+
+
+%META:FILEATTACHMENT{name="WikiDrawExample.png" attachment="WikiDrawExample.png" attr="h" comment="Create Drawings, or add notes to Images" date="1287891802" path="WikiDrawExample.png" size="175453" user="BaseUserMapping_333" version="1"}%

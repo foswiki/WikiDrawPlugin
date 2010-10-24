@@ -1,0 +1,10 @@
+%META:TOPICINFO{author="ProjectContributor" date="1267133207" format="1.1" version="$Rev$"}%
+
+---+ Wiki Draw annotation
+
+---++ Data form for %SYSTEMWEB%.WikiDrawPlugin
+
+|*Name*  |*Type*  |*Size*  |*Values*  |*Tooltip message*  |*Attributes*  |
+| <nop>Annotate | text | 40 | | | |
+| <nop>CallingTopic | text | 40 | | | |
+| <nop>SvgEditorVersion | text | 40 | | | |
