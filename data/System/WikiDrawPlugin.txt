@@ -1,6 +1,7 @@
 %META:TOPICINFO{author="BaseUserMapping_333" date="1287891802" format="1.1" version="2"}%
 ---+!! !WikiDrawPlugin
-<img class="foswikiRight" src="%ATTACHURLPATH%/WikiDrawExample.png" alt="Create Drawings, or add notes to Images" width='340' height='349' />
+<div class="foswikiRight" style="width: 340px; margin: 1em; font-size: 90%"><img src="%ATTACHURLPATH%/WikiDrawExample.png" alt="Create Drawings, or add notes to Images" width='340' height='349' />
+Image derived from an [[http://www.flickr.com/photos/dhobern/4374857724/][original photo]] Copyright (C) [[http://www.flickr.com/photos/dhobern/][Donald Hobern]], used under the [[http://creativecommons.org/licenses/by/2.0/deed.en][CC Attribution 2.0 Generic license]] </div>
 
 <!--
 One line description, required for extensions repository catalog.
@@ -19,24 +20,24 @@ prefer.
 
 !WikiDrawPlugin uses [[http://code.google.com/p/svg-edit/][SVG-edit]] (trunk svn from 29/09/2010 - pre2.6) to provide quick and easy drawing or annotation of images. 
 
-__WARNING: editing not compatible with InternetExplorer - but viewing of the drawings works correctly__
+__WARNING: editing is not possible with Internet Explorer - but viewing of the drawings works correctly__
 
 ---+++ Syntax Rules
 %INCLUDE{%SYSTEMWEB%.VarWIKIDRAW}%
 ---++++ save drawing as attachment to current topic
-<verbatim>
+%JQREQUIRE{"chili"}%<verbatim class="tml">
    %WIKIDRAW{
       "drawing"
-      annotate="http://somewhere.onthenet.com/some_image.png" 
+      annotate="http://somewhere.onthenet.com/some_image.png"
    }%
 </verbatim>
 
 ---++++ save drawing to a 'WikiDrawForm' topic
 !WikiDraw also can save the svg source for the drawing as the text of a topic - allowing searching and hand editing of that source, while continuing to provide the wysiwyg editing facility.
-<verbatim>
+<verbatim class="tml">
    %WIKIDRAW{
       "Sandbox.WikiDrawing"
-      annotate="Sandbox.SomeImage/some_image.png" 
+      annotate="Sandbox.SomeImage/some_image.png"
    }%
 </verbatim>
 
@@ -50,7 +51,7 @@ which generates a png version of the overlay, and sends that, and the svg source
 The transparent overlay png is displayed in view mode, and the annotated image (if any) will be put behind it using the css background.
 
 ---++ Known issues:
-   1 it really doesn't like using svg dimensions other than 640x480 (I'e reported an [[http://code.google.com/p/svg-edit/issues/detail?id=727][issue] for this, as its really painful when creating a drawing)
+   1 it really doesn't like using svg dimensions other than 640x480 (I'e reported an [[http://code.google.com/p/svg-edit/issues/detail?id=727][issue]] for this, as its really painful when creating a drawing)
    6 hide the edit buttons for ie..
    1 _DEFAULT="Web.Topic/something" is very broken
    6 =strikeone= support
@@ -67,7 +68,7 @@ The transparent overlay png is displayed in view mode, and the annotated image (
 ---++ Info
 
 Many thanks to the following sponsors for supporting this work:
-   * TRIN, The Taxonomic Information Network for Australian National Biodiversity Research
+   * [[http://www.taxonomy.org.au][TRIN]], The Taxonomy Research & Information Network with the [[http://www.anbg.gov.au/cpbr/][Centre for Australian National Biodiversity Research]]
 
 |  Author(s): | Foswiki:Main.SvenDowideit |
 |  Copyright: | &copy; 2010 SvenDowideit@fosiki.com and SVG-edit contributors and David Belais (pngIE) |
@@ -75,6 +76,7 @@ Many thanks to the following sponsors for supporting this work:
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
 |  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  25 October 2010: | Foswikitask:Item9878, ship examples with WikiDrawPlugin |
 |  21 October 2010: | initial public release |
 |  Dependencies: | %$DEPENDENCIES% |
 |  Home page: | http://foswiki.org/bin/view/Extensions/WikiDrawPlugin |
