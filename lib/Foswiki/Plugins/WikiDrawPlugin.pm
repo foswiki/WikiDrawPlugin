@@ -56,13 +56,42 @@ sub initPlugin {
         if (   ( $currentTemplate eq 'System.WikiDrawEdit' )
             or ( $template eq 'WikiDrawEdit' ) )
         {
+            my $jqueryVersion = $Foswiki::cfg{JQueryPlugin}{JQueryVersion}
+              || "jquery-1.3.2";
+            $jqueryVersion =~
+              /jquery-(\d*\.\d\.).*/;    #only care about major.minor
+            $jqueryVersion = $1;
+            if ( ( Foswiki::Func::getContext()->{'JQueryPluginEnabled'} == 1 )
+                and defined($jqueryVersion)
+                and ( $jqueryVersion >= 1.4 ) )
+            {
 
- #prevent JQueryPlugin from messing around
- #Foswiki::Func::addToZone('script', 'TinyMCEPlugin', '<!-- nothing smile -->');
-            Foswiki::Func::addToZone( 'script', 'JQUERYPLUGIN',
-                '<!-- nothing JQUERYPLUGIN smile -->' );
+          #all ok, add JQUERY-1.4 zone to be a comment, and require JQUERYPLUGIN
+                Foswiki::Func::addToZone(
+                    'script',                            'JQUERY-1.4',
+                    '<!-- using !JQueryPlugins 1.4 -->', 'JQUERYPLUGIN'
+                );
+            }
+            else {
 
-#Foswiki::Func::addToZone('script', 'JQUERYPLUGIN::LIVEQUERY', '<!-- nothing JQUERYPLUGIN::LIVEQUERY smile -->');
+#replace the JQUERY zone, and add the JQUERY-1.4 zone to point to jquery-script-fallback
+#prevent JQueryPlugin from messing around
+                Foswiki::Func::addToZone( 'script', 'TinyMCEPlugin',
+                    '<!-- disable TinyMCEPlugin -->' );
+                Foswiki::Func::addToZone(
+                    'script',                              'JQUERYPLUGIN',
+                    '<!-- disable JQUERYPLUGIN smile -->', 'JQUERY-1.4'
+                );
+                Foswiki::Func::loadTemplate('wikidraw');
+                my $wikiDrawJQuery = Foswiki::Func::expandTemplate(
+                    'wikidraw-script-jquery-fallback');
+
+                Foswiki::Func::addToZone( 'script', 'JQUERY-1.4',
+                    $wikiDrawJQuery );
+                Foswiki::Func::addToZone( 'script', 'JQUERYPLUGIN::LIVEQUERY',
+                    '<!-- disable JQUERYPLUGIN::LIVEQUERY smile -->' );
+
+            }
         }
     }
 
@@ -230,13 +259,13 @@ sub WIKIDRAW {
 
     my ( $drawingWeb, $drawingTopic, $drawingFile, $pngattachment ) =
       parseSvgSource( $drawing, $theWeb, $theTopic );
-      
+
     my $svgExists;
 
-    my $svgLoadUrl = '';
-    my $pngLoadUrl = '';
+    my $svgLoadUrl  = '';
+    my $pngLoadUrl  = '';
     my $pngLoadPath = '';
-    my $svgcomment = '';
+    my $svgcomment  = '';
     if ( $drawingFile eq '' ) {
 
         #topic
@@ -250,14 +279,15 @@ sub WIKIDRAW {
             $pngLoadPath = "$drawingWeb/$drawingTopic/$pngattachment";
 
             #TODO: could test for the WikiDrawForm..
-            $svgExists = 1; #I'm going to presume that the topic existing means it _is_ an svg
-            
+            $svgExists = 1
+              ; #I'm going to presume that the topic existing means it _is_ an svg
 
             #TODO: load the comment from topic META
-        } else {
-            $svgExists = 0; 
         }
-        
+        else {
+            $svgExists = 0;
+        }
+
     }
     else {
 
@@ -277,15 +307,16 @@ sub WIKIDRAW {
                 'viewfile', 'filename' => $pngattachment );
             $pngLoadPath = "$drawingWeb/$drawingTopic/$pngattachment";
 
-
             $svgExists = 1;
+
             #print STDERR "\*****************************    $pngattachment \n";
             #TODO: load the comment from topic META
-        } else {
-            $svgExists = 0; 
+        }
+        else {
+            $svgExists = 0;
         }
     }
-    ASSERT(defined($svgExists)) if DEBUG;
+    ASSERT( defined($svgExists) ) if DEBUG;
 
     my $canEdit = Foswiki::Func::getContext()->{authenticated}
       && Foswiki::Func::checkAccessPermission( 'CHANGE',
@@ -302,8 +333,9 @@ sub WIKIDRAW {
     my $tmpl = Foswiki::Func::expandTemplate( 'svg-' . $macroMode . '-iframe' );
 
     if ( $macroMode eq 'edit' ) {
-        #sorry, this mode was used initially, and now hasn't been tested for a while
-        #i'll be removing it soon
+
+    #sorry, this mode was used initially, and now hasn't been tested for a while
+    #i'll be removing it soon
 
         $svgLoadUrl = Foswiki::urlEncode($svgLoadUrl);
 

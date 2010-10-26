@@ -80,6 +80,14 @@ border: 0px solid gray;
 }
 </style>%TMPL:END%
 
+%{-----------------------------------------------------------}%
+%TMPL:DEF{wikidraw-script-jquery-fallback}%<!-- wikidraw-script-jquery-fallback -->
+<!-- Development version of script tags: -->
+<script type='text/javascript' src='jquery.js'></script>
+<!-- <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.js'></script> -->
+<!-- /wikidraw-script-jquery-fallback -->%TMPL:END%
+
+
 %{ -----UNUSED&UNSUPPORTED----------------------- }%
 %TMPL:DEF{svg-edit-iframe}%<iframe src="%PUBURL%/%SYSTEMWEB%/WikiDrawPlugin/svg-edit/svg-editor.html?%PARAMS%" width="%WIDTH%" height="%HEIGHT%" >
 loading SVG-EDIT...

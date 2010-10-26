@@ -20,7 +20,9 @@ prefer.
 
 !WikiDrawPlugin uses [[http://code.google.com/p/svg-edit/][SVG-edit]] (trunk svn from 29/09/2010 - pre2.6) to provide quick and easy drawing or annotation of images. 
 
-__WARNING: editing is not possible with Internet Explorer - but viewing of the drawings works correctly__
+%ICON{warning}% __WARNING: editing is not possible with Internet Explorer - but viewing of the drawings works correctly__
+
+%ICON{alert}% __INFORMATION:__ This plugin can either use JQueryPlugin if you select the non-default 1.4.2 version : =Extensions|JQueryPlugin= select =jquery-1.4.2= (or higher) OR will import its own version when required.
 
 ---+++ Syntax Rules
 %INCLUDE{%SYSTEMWEB%.VarWIKIDRAW}%
@@ -76,6 +78,7 @@ Many thanks to the following sponsors for supporting this work:
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
 |  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  26 October 2010: | Foswikitask:Item, add compatibility with Foswiki:Extensions.JQueryPlugin when =jquery-1.4.2= is selected, with fallback when required |
 |  25 October 2010: | Foswikitask:Item9878, ship examples with WikiDrawPlugin |
 |  21 October 2010: | initial public release |
 |  Dependencies: | %$DEPENDENCIES% |
