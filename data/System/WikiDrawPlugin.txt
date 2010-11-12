@@ -78,9 +78,10 @@ Many thanks to the following sponsors for supporting this work:
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
 |  Change History: | <!-- versions below in reverse order -->&nbsp; |
-|  26 October 2010: | Foswikitask:Item, add compatibility with Foswiki:Extensions.JQueryPlugin when =jquery-1.4.2= is selected, with fallback when required |
-|  25 October 2010: | Foswikitask:Item9878, ship examples with WikiDrawPlugin |
-|  21 October 2010: | initial public release |
+|  13 November 2010: | Foswikitask:Item9877, added work-around for NatSkin users |
+|  26 October 2010:  | Foswikitask:Item9896, add compatibility with Foswiki:Extensions.JQueryPlugin when =jquery-1.4.2= is selected, with fallback when required |
+|  25 October 2010:  | Foswikitask:Item9878, ship examples with WikiDrawPlugin |
+|  21 October 2010:  | initial public release |
 |  Dependencies: | %$DEPENDENCIES% |
 |  Home page: | http://foswiki.org/bin/view/Extensions/WikiDrawPlugin |
 |  Support: | http://foswiki.org/bin/view/Support/WikiDrawPlugin |

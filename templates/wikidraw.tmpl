@@ -8,7 +8,7 @@
 %TMPL:DEF{svg-view-html}%<div class="wikiDrawing">
 <img id="%IMG_ID%" class="wikiDraw wikiDrawView" src="%IF{"%DRAWINGEXISTS%" then="%IMAGEURL%" else="%ANNOTATE%"}%" />
 %BR%
-[[%SCRIPTURL{edit}%/%BASEWEB%/%BASETOPIC%?template=WikiDrawEdit;drawing=%DRAWING%;topicbased=%DRAWINGFILE%;annotateurl=%ANNOTATE%;returnto=%SCRIPTURL{view}%/%BASEWEB%/%BASETOPIC%][%IF{
+[[%SCRIPTURL{edit}%/%BASEWEB%/%BASETOPIC%?skin=default;template=WikiDrawEdit;drawing=%DRAWING%;topicbased=%DRAWINGFILE%;annotateurl=%ANNOTATE%;returnto=%SCRIPTURL{view}%/%BASEWEB%/%BASETOPIC%][%IF{
                      "%DRAWINGEXISTS%"
                      then="%MAKETEXT{Edit}%"
                      else="%MAKETEXT{Create}%"
@@ -53,7 +53,7 @@ border: 0px solid gray;
    type="frame"
    id="%IMG_ID%" 
    class="wikiDraw wikiDrawView"
-   caption="[[%SCRIPTURL{edit}%/%BASEWEB%/%BASETOPIC%?template=WikiDrawEdit;drawing=%DRAWING%;topicbased=%DRAWINGFILE%;annotateurl=%ANNOTATE%;returnto=%SCRIPTURL{view}%/%BASEWEB%/%BASETOPIC%][%IF{
+   caption="[[%SCRIPTURL{edit}%/%BASEWEB%/%BASETOPIC%?skin=default;template=WikiDrawEdit;drawing=%DRAWING%;topicbased=%DRAWINGFILE%;annotateurl=%ANNOTATE%;returnto=%SCRIPTURL{view}%/%BASEWEB%/%BASETOPIC%][%IF{
                      "%DRAWINGEXISTS%"
                      then="%MAKETEXT{Edit}%"
                      else="%MAKETEXT{Create}%"

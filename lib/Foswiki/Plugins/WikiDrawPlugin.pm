@@ -30,7 +30,7 @@ use Foswiki::Sandbox ();
 use Assert;
 
 our $VERSION           = '$Rev$';
-our $RELEASE           = '1.0.1';
+our $RELEASE           = '1.0.2';
 our $SHORTDESCRIPTION  = 'create or annotate images and save as svg and png';
 our $NO_PREFS_IN_TOPIC = 1;
 
