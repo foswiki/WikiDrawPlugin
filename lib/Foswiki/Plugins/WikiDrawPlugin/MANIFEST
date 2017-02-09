@@ -1,236 +1,278 @@
 # Release manifest for WikiDrawPlugin
 data/System/WikiDrawPlugin.txt 0644 Documentation
 data/System/VarWIKIDRAW.txt 0644 Documentation
-lib/Foswiki/Plugins/WikiDrawPlugin.pm 0644 Perl module
-templates/wikidraw.tmpl
+lib/Foswiki/Plugins/WikiDrawPlugin.pm 0644
+lib/Foswiki/Plugins/WikiDrawPlugin/DEPENDENCIES 0644
+templates/wikidraw.tmpl 0644
 
-data/System/WikiDrawForm.txt
-data/System/WikiDrawViewTemplate.txt
-data/System/WikiDrawEditTemplate.txt
+data/System/WikiDrawForm.txt 0644
+data/System/WikiDrawViewTemplate.txt 0644
+data/System/WikiDrawEditTemplate.txt 0644
 
-pub/System/WikiDrawPlugin/WikiDrawExample.png
+pub/System/WikiDrawPlugin/WikiDrawExample.png 0644
 
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-foswiki.js
-pub/System/WikiDrawPlugin/svg-edit/extensions/foswiki-icon.xml
-
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-foswiki.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/foswiki-icon.xml 0644
 
 #noci
-#http://dissentgraphics.com/tools/pngie/
-pub/System/WikiDrawPlugin/pngie/jquery.pngie.js
-pub/System/WikiDrawPlugin/pngie/Transparent.gif
-pub/System/WikiDrawPlugin/pngie/jquery.pngie.min.js
-
 
 #svg-edit
-pub/System/WikiDrawPlugin/svg-edit/svg-editor.manifest
-pub/System/WikiDrawPlugin/svg-edit/jquerybbq/jquery.bbq.min.js
-pub/System/WikiDrawPlugin/svg-edit/svg-editor.js
-pub/System/WikiDrawPlugin/svg-edit/svgicons/jquery.svgicons.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.be.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.ro.js
-pub/System/WikiDrawPlugin/svg-edit/locale/locale.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.fr.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.lt.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.pt-PT.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.sk.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.mk.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.yi.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.cy.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.hr.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.zh-HK.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.vi.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.th.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.et.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.da.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.hy.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.sw.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.az.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.zh-CN.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.ms.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.ga.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.ko.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.cs.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.tr.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.sl.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.pt-BR.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.ar.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.sq.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.sr.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.tl.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.ca.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.fa.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.bg.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.it.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.ja.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.pl.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.fi.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.af.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.de.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.es.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.hu.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.el.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.id.js
-pub/System/WikiDrawPlugin/svg-edit/locale/README.txt
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.hi.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.fy.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.no.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.uk.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.zh-TW.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.gl.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.he.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.lv.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.nl.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.en.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.ru.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.is.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.mt.js
-pub/System/WikiDrawPlugin/svg-edit/locale/lang.sv.js
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-eyedropper.js
-pub/System/WikiDrawPlugin/svg-edit/extensions/helloworld-icon.xml
-pub/System/WikiDrawPlugin/svg-edit/extensions/markers-icons.xml
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-connector.js
-pub/System/WikiDrawPlugin/svg-edit/extensions/eyedropper.png
-pub/System/WikiDrawPlugin/svg-edit/extensions/foreignobject-icons.xml
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-closepath.js
-pub/System/WikiDrawPlugin/svg-edit/extensions/closepath_icons.svg
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-helloworld.js
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-arrows.js
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-markers.js
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-foreignobject.js
-pub/System/WikiDrawPlugin/svg-edit/extensions/eyedropper-icon.xml
-pub/System/WikiDrawPlugin/svg-edit/svg-editor.html
-pub/System/WikiDrawPlugin/svg-edit/jquery.js
-pub/System/WikiDrawPlugin/svg-edit/embedapi.js
-pub/System/WikiDrawPlugin/svg-edit/svgcanvas.js
-pub/System/WikiDrawPlugin/svg-edit/jquery-ui/jquery-ui-1.8.custom.min.js
-pub/System/WikiDrawPlugin/svg-edit/images/view-refresh.png
-pub/System/WikiDrawPlugin/svg-edit/images/align-left.svg
-pub/System/WikiDrawPlugin/svg-edit/images/text.png
-pub/System/WikiDrawPlugin/svg-edit/images/to_path.png
-pub/System/WikiDrawPlugin/svg-edit/images/rect.png
-pub/System/WikiDrawPlugin/svg-edit/images/square.png
-pub/System/WikiDrawPlugin/svg-edit/images/redo.png
-pub/System/WikiDrawPlugin/svg-edit/images/align-right.svg
-pub/System/WikiDrawPlugin/svg-edit/images/fhpath.png
-pub/System/WikiDrawPlugin/svg-edit/images/polygon.svg
-pub/System/WikiDrawPlugin/svg-edit/images/undo.png
-pub/System/WikiDrawPlugin/svg-edit/images/align-top.svg
-pub/System/WikiDrawPlugin/svg-edit/images/freehand-circle.png
-pub/System/WikiDrawPlugin/svg-edit/images/node_clone.png
-pub/System/WikiDrawPlugin/svg-edit/images/eye.png
-pub/System/WikiDrawPlugin/svg-edit/images/wave.png
-pub/System/WikiDrawPlugin/svg-edit/images/align-middle.png
-pub/System/WikiDrawPlugin/svg-edit/images/none.png
-pub/System/WikiDrawPlugin/svg-edit/images/polygon.png
-pub/System/WikiDrawPlugin/svg-edit/images/line.png
-pub/System/WikiDrawPlugin/svg-edit/images/delete.png
-pub/System/WikiDrawPlugin/svg-edit/images/flyouth.png
-pub/System/WikiDrawPlugin/svg-edit/images/zoom.png
-pub/System/WikiDrawPlugin/svg-edit/images/conn.svg
-pub/System/WikiDrawPlugin/svg-edit/images/save.png
-pub/System/WikiDrawPlugin/svg-edit/images/logo.png
-pub/System/WikiDrawPlugin/svg-edit/images/align-right.png
-pub/System/WikiDrawPlugin/svg-edit/images/italic.png
-pub/System/WikiDrawPlugin/svg-edit/images/align-bottom.svg
-pub/System/WikiDrawPlugin/svg-edit/images/sep.png
-pub/System/WikiDrawPlugin/svg-edit/images/flyup.gif
-pub/System/WikiDrawPlugin/svg-edit/images/cancel.png
-pub/System/WikiDrawPlugin/svg-edit/images/shape_ungroup.png
-pub/System/WikiDrawPlugin/svg-edit/images/go-up.png
-pub/System/WikiDrawPlugin/svg-edit/images/align-center.svg
-pub/System/WikiDrawPlugin/svg-edit/images/shape_group.png
-pub/System/WikiDrawPlugin/svg-edit/images/copy.png
-pub/System/WikiDrawPlugin/svg-edit/images/go-down.png
-pub/System/WikiDrawPlugin/svg-edit/images/reorient.png
-pub/System/WikiDrawPlugin/svg-edit/images/link_controls.png
-pub/System/WikiDrawPlugin/svg-edit/images/document-properties.png
-pub/System/WikiDrawPlugin/svg-edit/images/freehand-square.png
-pub/System/WikiDrawPlugin/svg-edit/images/svg_edit_icons.svgz
-pub/System/WikiDrawPlugin/svg-edit/images/paste.png
-pub/System/WikiDrawPlugin/svg-edit/images/circle.png
-pub/System/WikiDrawPlugin/svg-edit/images/move_top.png
-pub/System/WikiDrawPlugin/svg-edit/images/text.svg
-pub/System/WikiDrawPlugin/svg-edit/images/select_node.png
-pub/System/WikiDrawPlugin/svg-edit/images/align-center.png
-pub/System/WikiDrawPlugin/svg-edit/images/source.png
-pub/System/WikiDrawPlugin/svg-edit/images/cut.png
-pub/System/WikiDrawPlugin/svg-edit/images/README.txt
-pub/System/WikiDrawPlugin/svg-edit/images/align-middle.svg
-pub/System/WikiDrawPlugin/svg-edit/images/node_delete.png
-pub/System/WikiDrawPlugin/svg-edit/images/logo.svg
-pub/System/WikiDrawPlugin/svg-edit/images/open.png
-pub/System/WikiDrawPlugin/svg-edit/images/align-left.png
-pub/System/WikiDrawPlugin/svg-edit/images/clone.png
-pub/System/WikiDrawPlugin/svg-edit/images/align-top.png
-pub/System/WikiDrawPlugin/svg-edit/images/svg_edit_icons.svg
-pub/System/WikiDrawPlugin/svg-edit/images/image.png
-pub/System/WikiDrawPlugin/svg-edit/images/path.png
-pub/System/WikiDrawPlugin/svg-edit/images/spinbtn_updn_big.png
-pub/System/WikiDrawPlugin/svg-edit/images/ellipse.png
-pub/System/WikiDrawPlugin/svg-edit/images/dropdown.gif
-pub/System/WikiDrawPlugin/svg-edit/images/wireframe.png
-pub/System/WikiDrawPlugin/svg-edit/images/bold.png
-pub/System/WikiDrawPlugin/svg-edit/images/select.png
-pub/System/WikiDrawPlugin/svg-edit/images/rotate.png
-pub/System/WikiDrawPlugin/svg-edit/images/clear.png
-pub/System/WikiDrawPlugin/svg-edit/images/align-bottom.png
-pub/System/WikiDrawPlugin/svg-edit/images/move_bottom.png
-pub/System/WikiDrawPlugin/svg-edit/js-hotkeys/jquery.hotkeys.min.js
-pub/System/WikiDrawPlugin/svg-edit/js-hotkeys/README.md
-pub/System/WikiDrawPlugin/svg-edit/svg-editor.css
-pub/System/WikiDrawPlugin/svg-edit/spinbtn/JQuerySpinBtn.js
-pub/System/WikiDrawPlugin/svg-edit/spinbtn/JQuerySpinBtn.min.js
-pub/System/WikiDrawPlugin/svg-edit/spinbtn/JQuerySpinBtn.css
-pub/System/WikiDrawPlugin/svg-edit/spinbtn/spinbtn_updn.png
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/README
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/jquery.jgraduate.js
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/jpicker-1.0.12.min.js
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/css/jPicker-1.0.12.css
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/css/jgraduate.css
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/LICENSE
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/Maps.png
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/mappoint.gif
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/preview-opacity.png
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/Bars.png
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/bar-opacity.png
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/NoColor.png
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/mappoint_c.png
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/rangearrows2.gif
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/rangearrows.gif
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/picker.gif
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/AlphaBar.png
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/map-opacity.png
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/mappoint_f.png
-pub/System/WikiDrawPlugin/svg-edit/jgraduate/jquery.jgraduate.min.js
-pub/System/WikiDrawPlugin/svg-edit/canvg/rgbcolor.js
-pub/System/WikiDrawPlugin/svg-edit/canvg/canvg.js
-pub/System/WikiDrawPlugin/svg-edit/svg-editor.min.js
-pub/System/WikiDrawPlugin/svg-edit/svgcanvas.min.js
-
-
-#new in 2.6 trunk
-pub/System/WikiDrawPlugin/svg-edit/contextmenu/jquery.contextMenu.js
-pub/System/WikiDrawPlugin/svg-edit/contextmenu/jquery.contextMenu.min.js
-pub/System/WikiDrawPlugin/svg-edit/embedapi.html
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-grid.js
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-imagelib.js
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-imagelib.xml
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-shapes.js
-pub/System/WikiDrawPlugin/svg-edit/extensions/ext-shapes.xml
-pub/System/WikiDrawPlugin/svg-edit/extensions/grid-icon.xml
-pub/System/WikiDrawPlugin/svg-edit/extensions/imagelib/index.html
-pub/System/WikiDrawPlugin/svg-edit/extensions/imagelib/smiley.svg
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/animal.json
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/arrow.json
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/dialog_balloon.json
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/electronics.json
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/flowchart.json
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/game.json
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/math.json
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/misc.json
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/music.json
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/object.json
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/raphael.txt
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/raphael_1.json
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/raphael_2.json
-pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/symbol.json
+pub/System/WikiDrawPlugin/svg-edit/browser-not-supported.html 0644
+pub/System/WikiDrawPlugin/svg-edit/browser.js 0644
+pub/System/WikiDrawPlugin/svg-edit/canvg/canvg.js 0644
+pub/System/WikiDrawPlugin/svg-edit/canvg/rgbcolor.js 0644
+pub/System/WikiDrawPlugin/svg-edit/config-sample.js 0644
+pub/System/WikiDrawPlugin/svg-edit/contextmenu.js 0644
+pub/System/WikiDrawPlugin/svg-edit/contextmenu/jquery.contextMenu.js 0755
+pub/System/WikiDrawPlugin/svg-edit/contextmenu/jquery.contextMenu.min.js 0755
+pub/System/WikiDrawPlugin/svg-edit/coords.js 0644
+pub/System/WikiDrawPlugin/svg-edit/draw.js 0644
+pub/System/WikiDrawPlugin/svg-edit/embedapi-dom.js 0644
+pub/System/WikiDrawPlugin/svg-edit/embedapi.html 0644
+pub/System/WikiDrawPlugin/svg-edit/embedapi.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/allowedMimeTypes.php 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/closepath_icons.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-arrows.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-closepath.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-connector.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-eyedropper.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-foreignobject.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-foswiki.js 0775
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-grid.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-helloworld.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-imagelib.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-imagelib.xml 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-markers.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-mathjax.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-overview_window.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-panning.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-panning.xml 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-php_savefile.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-polygon.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-server_moinsave.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-server_opensave.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-shapes.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-shapes.xml 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-star.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-storage.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-webappfind.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/ext-xdomain-messaging.js 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/eyedropper-icon.xml 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/eyedropper.png 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/fileopen.php 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/filesave.php 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/foreignobject-icons.xml 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/foswiki-icon.xml 0775
+pub/System/WikiDrawPlugin/svg-edit/extensions/grid-icon.xml 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/helloworld-icon.xml 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/imagelib/index.html 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/imagelib/smiley.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/markers-icons.xml 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/mathjax-icons.xml 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/polygon-icons.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/savefile.php 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/animal.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/arrow.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/dialog_balloon.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/electronics.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/flowchart.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/game.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/math.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/misc.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/music.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/object.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/raphael.txt 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/raphael_1.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/raphael_2.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/shapelib/symbol.json 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/star-icons.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/extensions/webappfind-icon.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/history.js 0644
+pub/System/WikiDrawPlugin/svg-edit/images/README.txt 0644
+pub/System/WikiDrawPlugin/svg-edit/images/align-bottom.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/align-bottom.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/images/align-center.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/align-center.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/images/align-left.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/align-left.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/images/align-middle.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/align-middle.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/images/align-right.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/align-right.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/images/align-top.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/align-top.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/images/bold.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/cancel.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/circle.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/clear.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/clone.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/conn.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/images/copy.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/cut.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/delete.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/document-properties.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/dropdown.gif 0644
+pub/System/WikiDrawPlugin/svg-edit/images/ellipse.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/eye.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/fhpath.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/flyouth.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/flyup.gif 0644
+pub/System/WikiDrawPlugin/svg-edit/images/freehand-circle.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/freehand-square.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/go-down.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/go-up.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/image.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/italic.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/line.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/link_controls.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/logo.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/logo.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/images/move_bottom.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/move_top.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/node_clone.png 0755
+pub/System/WikiDrawPlugin/svg-edit/images/node_delete.png 0755
+pub/System/WikiDrawPlugin/svg-edit/images/none.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/open.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/paste.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/path.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/polygon.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/polygon.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/images/rect.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/redo.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/reorient.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/rotate.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/save.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/select.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/select_node.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/sep.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/shape_group_elements.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/shape_ungroup.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/source.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/spinbtn_updn_big.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/square.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/svg_edit_icons.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/images/svg_edit_icons.svgz 0644
+pub/System/WikiDrawPlugin/svg-edit/images/text.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/text.svg 0644
+pub/System/WikiDrawPlugin/svg-edit/images/to_path.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/undo.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/view-refresh.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/wave.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/wireframe.png 0644
+pub/System/WikiDrawPlugin/svg-edit/images/zoom.png 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/LICENSE 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/README 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/css/jPicker.css 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/css/jgraduate.css 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/AlphaBar.png 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/Bars.png 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/Maps.png 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/NoColor.png 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/bar-opacity.png 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/map-opacity.png 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/mappoint.gif 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/mappoint_c.png 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/mappoint_f.png 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/picker.gif 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/preview-opacity.png 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/rangearrows.gif 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/images/rangearrows2.gif 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/jpicker.js 0755
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/jpicker.min.js 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/jquery.jgraduate.js 0644
+pub/System/WikiDrawPlugin/svg-edit/jgraduate/jquery.jgraduate.min.js 0644
+pub/System/WikiDrawPlugin/svg-edit/jquery-svg.js 0644
+pub/System/WikiDrawPlugin/svg-edit/jquery-ui/jquery-ui-1.8.17.custom.min.js 0644
+pub/System/WikiDrawPlugin/svg-edit/jquery-ui/jquery-ui-1.8.custom.min.js 0755
+pub/System/WikiDrawPlugin/svg-edit/jquery.js 0644
+pub/System/WikiDrawPlugin/svg-edit/jquerybbq/jquery.bbq.min.js 0644
+pub/System/WikiDrawPlugin/svg-edit/js-hotkeys/README.md 0644
+pub/System/WikiDrawPlugin/svg-edit/js-hotkeys/jquery.hotkeys.min.js 0644
+pub/System/WikiDrawPlugin/svg-edit/jspdf/jspdf.min.js 0644
+pub/System/WikiDrawPlugin/svg-edit/jspdf/jspdf.plugin.svgToPdf.js 0644
+pub/System/WikiDrawPlugin/svg-edit/jspdf/underscore-min.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/README.txt 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.af.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.ar.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.az.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.be.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.bg.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.ca.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.cs.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.cy.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.da.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.de.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.el.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.en.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.es.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.et.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.fa.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.fi.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.fr.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.fy.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.ga.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.gl.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.he.js 0755
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.hi.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.hr.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.hu.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.hy.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.id.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.is.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.it.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.ja.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.ko.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.lt.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.lv.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.mk.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.ms.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.mt.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.nl.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.no.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.pl.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.pt-BR.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.pt-PT.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.ro.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.ru.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.sk.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.sl.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.sq.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.sr.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.sv.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.sw.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.test.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.th.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.tl.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.tr.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.uk.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.vi.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.yi.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.zh-CN.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.zh-HK.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/lang.zh-TW.js 0644
+pub/System/WikiDrawPlugin/svg-edit/locale/locale.js 0644
+pub/System/WikiDrawPlugin/svg-edit/math.js 0644
+pub/System/WikiDrawPlugin/svg-edit/path.js 0644
+pub/System/WikiDrawPlugin/svg-edit/pathseg.js 0644
+pub/System/WikiDrawPlugin/svg-edit/recalculate.js 0644
+pub/System/WikiDrawPlugin/svg-edit/sanitize.js 0644
+pub/System/WikiDrawPlugin/svg-edit/select.js 0644
+pub/System/WikiDrawPlugin/svg-edit/spinbtn/JQuerySpinBtn.css 0644
+pub/System/WikiDrawPlugin/svg-edit/spinbtn/JQuerySpinBtn.js 0644
+pub/System/WikiDrawPlugin/svg-edit/spinbtn/JQuerySpinBtn.min.js 0644
+pub/System/WikiDrawPlugin/svg-edit/spinbtn/spinbtn_updn.png 0644
+pub/System/WikiDrawPlugin/svg-edit/svg-editor.css 0644
+pub/System/WikiDrawPlugin/svg-edit/svg-editor.html 0644
+pub/System/WikiDrawPlugin/svg-edit/svg-editor.js 0644
+pub/System/WikiDrawPlugin/svg-edit/svg-editor.manifest 0644
+pub/System/WikiDrawPlugin/svg-edit/svg-editor.min.js 0644
+pub/System/WikiDrawPlugin/svg-edit/svgcanvas.js 0644
+pub/System/WikiDrawPlugin/svg-edit/svgcanvas.min.js 0644
+pub/System/WikiDrawPlugin/svg-edit/svgedit.compiled.js 0644
+pub/System/WikiDrawPlugin/svg-edit/svgedit.js 0644
+pub/System/WikiDrawPlugin/svg-edit/svgicons/jquery.svgicons.js 0644
+pub/System/WikiDrawPlugin/svg-edit/svgtransformlist.js 0644
+pub/System/WikiDrawPlugin/svg-edit/svgutils.js 0644
+pub/System/WikiDrawPlugin/svg-edit/touch.js 0644
+pub/System/WikiDrawPlugin/svg-edit/units.js 0644
+templates/wikidraw.tmpl 0775

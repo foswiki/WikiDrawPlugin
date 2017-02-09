@@ -2,42 +2,61 @@
 <html>
 <!-- removed for now, causes problems in Firefox: manifest="svg-editor.manifest" -->
 <head>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
 <link rel="icon" type="image/png" href="images/logo.png"/>
-<link rel="stylesheet" href="jgraduate/css/jPicker-1.0.12.css" type="text/css"/>
+<link rel="stylesheet" href="jgraduate/css/jPicker.css" type="text/css"/>
 <link rel="stylesheet" href="jgraduate/css/jgraduate.css" type="text/css"/>
 <link rel="stylesheet" href="svg-editor.css" type="text/css"/>
 <link rel="stylesheet" href="spinbtn/JQuerySpinBtn.css" type="text/css"/>
-<!-- Development version of script tags: -->
-<!-- <script type="text/javascript" src="jquery.js"></script> -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.js"></script>
-<script type="text/javascript" src="js-hotkeys/jquery.hotkeys.min.js"></script>
-<script type="text/javascript" src="jgraduate/jquery.jgraduate.js"></script>
-<script type="text/javascript" src="svgicons/jquery.svgicons.js"></script>
-<script type="text/javascript" src="jquerybbq/jquery.bbq.min.js"></script>
-<script type="text/javascript" src="spinbtn/JQuerySpinBtn.js"></script>
-<script type="text/javascript" src="contextmenu/jquery.contextMenu.js"></script>
-<script type="text/javascript" src="svgcanvas.js"></script>
-<script type="text/javascript" src="svg-editor.js"></script>
-<script type="text/javascript" src="locale/locale.js"></script>
-<!-- you can load extensions here -->
-<!-- <script type="text/javascript" src="extensions/ext-helloworld.js"></script> -->
+<link rel="stylesheet" href="custom.css" type="text/css"/>
+<!--{if jquery_release}>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!{else}-->
+  <script src="jquery.js"></script>
+<!--{endif}-->
 
-<!-- Release version of script tags: >
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="js-hotkeys/jquery.hotkeys-0.7.9.js"></script>
-<script type="text/javascript" src="jquerybbq/jquery.bbq.min.js"></script>
-<script type="text/javascript" src="jgraduate/jquery.jgraduate.min.js"></script>
-<script type="text/javascript" src="spinbtn/JQuerySpinBtn.min.js"></script>
-<script type="text/javascript" src="svgcanvas.min.js"></script>
-<script type="text/javascript" src="svg-editor.min.js"></script>
-script type="text/javascript" src="locale/locale.min.js"></script-->
+<script src="js-hotkeys/jquery.hotkeys.min.js"></script>
+<script src="jquerybbq/jquery.bbq.min.js"></script>
+<script src="svgicons/jquery.svgicons.js"></script>
+<script src="jgraduate/jquery.jgraduate.min.js"></script>
+<script src="spinbtn/JQuerySpinBtn.min.js"></script>
+<script src="touch.js"></script>
 
+<!--{if svg_edit_release}-->
+  <script src="svgedit.compiled.js"></script>
+<!--{else}>
+  <script src="svgedit.js"></script>
+  <script src="jquery-svg.js"></script>
+  <script src="contextmenu/jquery.contextMenu.js"></script>
+  <script src="pathseg.js"></script>
+  <script src="browser.js"></script>
+  <script src="svgtransformlist.js"></script>
+  <script src="math.js"></script>
+  <script src="units.js"></script>
+  <script src="svgutils.js"></script>
+  <script src="sanitize.js"></script>
+  <script src="history.js"></script>
+  <script src="coords.js"></script>
+  <script src="recalculate.js"></script>
+  <script src="select.js"></script>
+  <script src="draw.js"></script>
+  <script src="path.js"></script>
+  <script src="svgcanvas.js"></script>
+  <script src="svg-editor.js"></script>
+  <script src="locale/locale.js"></script>
+  <script src="contextmenu.js"></script>
+<!{endif}-->
 
 <!-- always minified scripts -->
-<script type="text/javascript" src="jquery-ui/jquery-ui-1.8.custom.min.js"></script>
-<script type="text/javascript" src="jgraduate/jpicker-1.0.12.min.js"></script>
+<script src="jquery-ui/jquery-ui-1.8.17.custom.min.js"></script>
+<script src="jgraduate/jpicker.js"></script>
+
+<!-- If you do not wish to add extensions by URL, you can load them
+by creating the following file and adding by calls to svgEditor.setConfig -->
+<script src="config.js"></script>
 
 <!-- feeds -->
 <link rel="alternate" type="application/atom+xml" title="SVG-edit General Discussion" href="http://groups.google.com/group/svg-edit/feed/atom_v1_0_msgs.xml" />
@@ -49,9 +68,25 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 <body>
 <div id="svg_editor">
 
+<div id="rulers">
+	<div id="ruler_corner"></div>
+	<div id="ruler_x">
+		<div>
+			<canvas height="15"></canvas>
+		</div>
+	</div>
+	<div id="ruler_y">
+		<div>
+			<canvas width="15"></canvas>
+		</div>
+	</div>
+</div>
+
 <div id="workarea">
 <style id="styleoverrides" type="text/css" media="screen" scoped="scoped"></style>
-<div id="svgcanvas"></div>
+<div id="svgcanvas" style="position:relative">
+
+</div>
 </div>
 
 <div id="sidepanels">
@@ -81,8 +116,8 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 </div>
 
 <div id="main_button">
-	<div id="main_icon" class="buttonup" title="Main Menu">
-		<span></span>
+	<div id="main_icon" class="tool_button" title="Main Menu">
+		<span>SVG-Edit</span>
 		<div id="logo"></div>
 		<div class="dropdown"></div>
 	</div>
@@ -93,44 +128,49 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 		<ul>
 			<li id="tool_clear">
 				<div></div>
-				New Image [N]
+				New Image (N)
 			</li>
 			
 			<li id="tool_open" style="display:none;">
 				<div id="fileinputs">
 					<div></div>
 				</div>
-				Open Image [O]
+				Open SVG
 			</li>
 			
 			<li id="tool_import" style="display:none;">
 				<div id="fileinputs_import">
 					<div></div>
 				</div>
-				Import SVG
+				Import Image
 			</li>
 			
 			<li id="tool_save">
 				<div></div>
-				Save Image [S]
+				Save Image (S)
 			</li>
 			
 			<li id="tool_export">
 				<div></div>
-				Export as PNG
+				Export
 			</li>
 			
 			<li id="tool_docprops">
 				<div></div>
-				Document Properties [P]
+				Document Properties (D)
 			</li>
 		</ul>
-		
+
 		<p>
 			<a href="http://svg-edit.googlecode.com/" target="_blank">
 				SVG-edit Home Page
 			</a>
 		</p>
+
+		<button id="tool_prefs_option">
+			Editor Options
+		</button>
+
 
 	</div>
 </div>
@@ -138,13 +178,14 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 
 
 <div id="tools_top" class="tools_panel">
-	
+
 	<div id="editor_panel">
+		<div class="tool_sep"></div>
 		<div class="push_button" id="tool_source" title="Edit Source [U]"></div>
 		<div class="tool_button" id="tool_wireframe" title="Wireframe Mode [F]"></div>
 	</div>
 
-    <!-- History buttons -->
+	<!-- History buttons -->
 	<div id="history_panel">
 		<div class="tool_sep"></div>
 		<div class="push_button tool_button_disabled" id="tool_undo" title="Undo [Z]"></div>
@@ -155,17 +196,22 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 	<div id="selected_panel">
 		<div class="toolset">
 			<div class="tool_sep"></div>
-			<div class="push_button" id="tool_clone" title="Clone Element [C]"></div>
+			<div class="push_button" id="tool_clone" title="Duplicate Element [D]"></div>
 			<div class="push_button" id="tool_delete" title="Delete Element [Delete/Backspace]"></div>
 			<div class="tool_sep"></div>
 			<div class="push_button" id="tool_move_top" title="Bring to Front [ Ctrl+Shift+] ]"></div>
 			<div class="push_button" id="tool_move_bottom" title="Send to Back [ Ctrl+Shift+[ ]"></div>
 			<div class="push_button" id="tool_topath" title="Convert to Path"></div>
 			<div class="push_button" id="tool_reorient" title="Reorient path"></div>
+			<div class="push_button" id="tool_make_link" title="Make (hyper)link"></div>
 			<div class="tool_sep"></div>
 			<label id="idLabel" title="Identify the element">
 				<span>id:</span>
 				<input id="elem_id" class="attr_changer" data-attr="id" size="10" type="text"/>
+			</label>
+			<label id="classLabel" title="Element class">
+				<span>class:</span>
+				<input id="elem_class" class="attr_changer" data-attr="class" size="10" type="text"/>
 			</label>
 		</div>
 
@@ -201,14 +247,15 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 			</label>
 		</div>
 	</div>
-
+	
 	<!-- Buttons when multiple elements are selected -->
 	<div id="multiselected_panel">
 		<div class="tool_sep"></div>
 		<div class="push_button" id="tool_clone_multi" title="Clone Elements [C]"></div>
 		<div class="push_button" id="tool_delete_multi" title="Delete Selected Elements [Delete/Backspace]"></div>
 		<div class="tool_sep"></div>
-		<div class="push_button" id="tool_group" title="Group Elements [G]"></div>
+		<div class="push_button" id="tool_group_elements" title="Group Elements [G]"></div>
+		<div class="push_button" id="tool_make_link_multi" title="Make (hyper)link"></div>
 		<div class="push_button" id="tool_alignleft" title="Align Left"></div>
 		<div class="push_button" id="tool_aligncenter" title="Align Center"></div>
 		<div class="push_button" id="tool_alignright" title="Align Right"></div>
@@ -371,10 +418,17 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 		<div class="push_button" id="tool_ungroup" title="Ungroup Elements [G]"></div>
 	</div>
 
+	<!-- For anchor elements -->
+	<div id="a_panel">
+		<label id="tool_link_url" title="Set link URL (leave empty to remove)">
+			<span id="linkLabel" class="icon_label"></span>
+			<input id="link_url" type="text" size="35"/>
+		</label>	
+	</div>
 	
 	<div id="path_node_panel">
 		<div class="tool_sep"></div>
-		<div class="tool_button" id="tool_node_link" title="Link Control Points"></div>
+		<div class="tool_button push_button_pressed" id="tool_node_link" title="Link Control Points"></div>
 		<div class="tool_sep"></div>
 		<label id="tool_node_x">x:
 			<input id="path_node_x" class="attr_changer" title="Change node's x coordinate" size="3" data-attr="x"/>
@@ -392,24 +446,25 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 		<div class="tool_button" id="tool_openclose_path" title="Open/close sub-path"></div>
 		<div class="tool_button" id="tool_add_subpath" title="Add sub-path"></div>
 	</div>
+</div> <!-- tools_top -->
 	<div id="cur_context_panel">
 		
 	</div>
-</div> <!-- tools_top -->
+
 
 <div id="tools_left" class="tools_panel">
-	<div class="tool_button" id="tool_select" title="Select Tool [1]"></div>
-	<div class="tool_button" id="tool_fhpath" title="Pencil Tool [2]"></div>
-	<div class="tool_button" id="tool_line" title="Line Tool [3]"></div>
-	<div class="tool_button flyout_current" id="tools_rect_show" title="Square/Rect Tool [4/Shift+4]">
+	<div class="tool_button" id="tool_select" title="Select Tool"></div>
+	<div class="tool_button" id="tool_fhpath" title="Pencil Tool"></div>
+	<div class="tool_button" id="tool_line" title="Line Tool"></div>
+	<div class="tool_button flyout_current" id="tools_rect_show" title="Square/Rect Tool">
 		<div class="flyout_arrow_horiz"></div>
 	</div>
-	<div class="tool_button flyout_current" id="tools_ellipse_show" title="Ellipse/Circle Tool [5/Shift+5]">
+	<div class="tool_button flyout_current" id="tools_ellipse_show" title="Ellipse/Circle Tool">
 		<div class="flyout_arrow_horiz"></div>
 	</div>
-	<div class="tool_button" id="tool_path" title="Path Tool [7]"></div>
-	<div class="tool_button" id="tool_text" title="Text Tool [6]"></div>
-	<div class="tool_button" id="tool_image" title="Image Tool [8]"></div>
+	<div class="tool_button" id="tool_path" title="Path Tool"></div>
+	<div class="tool_button" id="tool_text" title="Text Tool"></div>
+	<div class="tool_button" id="tool_image" title="Image Tool"></div>
 	<div class="tool_button" id="tool_zoom" title="Zoom Tool [Ctrl+Up/Down]"></div>
 	
 	<div style="display: none">
@@ -424,7 +479,7 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 
 <div id="tools_bottom" class="tools_panel">
 
-    <!-- Zoom buttons -->
+	<!-- Zoom buttons -->
 	<div id="zoom_panel" class="toolset" title="Change zoom level">
 		<label>
 		<span id="zoomLabel" class="zoom_tool icon_label"></span>
@@ -451,6 +506,7 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 
 	<div id="tools_bottom_2">
 		<div id="color_tools">
+			
 			<div class="color_tool" id="tool_fill">
 				<label class="icon_label" for="fill_color" title="Change fill color"></label>
 				<div class="color_block">
@@ -460,64 +516,56 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 			</div>
 		
 			<div class="color_tool" id="tool_stroke">
-				<div class="color_block">
-					<label class="icon_label" title="Change stroke color"></label>
-				</div>
+				<label class="icon_label" title="Change stroke color"></label>
 				<div class="color_block">
 					<div id="stroke_bg"></div>
 					<div id="stroke_color" class="color_block" title="Change stroke color"></div>
 				</div>
 				
-				<label>
+				<label class="stroke_label">
 					<input id="stroke_width" title="Change stroke width by 1, shift-click to change by 0.1" size="2" value="5" type="text" data-attr="Stroke Width"/>
 				</label>
+
+				<div id="toggle_stroke_tools" title="Show/hide more stroke tools"></div>
 				
 				<label class="stroke_tool">
 					<select id="stroke_style" title="Change stroke dash style">
-						<option selected="selected" value="none">&mdash;</option>
+						<option selected="selected" value="none">&#8212;</option>
 						<option value="2,2">...</option>
 						<option value="5,5">- -</option>
 						<option value="5,2,2,2">- .</option>
 						<option value="5,2,2,2,2,2">- ..</option>
 					</select>
-				</label>	
+				</label>
 
  				<div class="stroke_tool dropdown" id="stroke_linejoin">
- 					<div>
-						<div id="cur_linejoin" title="Linejoin: Miter"></div>
-						<button></button>
-					</div>
+					<div id="cur_linejoin" title="Linejoin: Miter"></div>
+					<button></button>
  				</div>
  				
  				<div class="stroke_tool dropdown" id="stroke_linecap">
- 					<div>
-						<div id="cur_linecap" title="Linecap: Butt"></div>
-						<button></button>
-					</div>
+					<div id="cur_linecap" title="Linecap: Butt"></div>
+					<button></button>
  				</div>
-			
-				<div id="toggle_stroke_tools" title="Show/hide more stroke tools">
-					&gt;&gt;
-				</div>
-				
+
 			</div>
-		</div>
-	
-		<div class="toolset" id="tool_opacity" title="Change selected item opacity">
-			<label>
-				<span id="group_opacityLabel" class="icon_label"></span>
-				<input id="group_opacity" size="3" value="100" type="text"/>
-			</label>
-			<div id="opacity_dropdown" class="dropdown">
-				<button></button>
-				<ul>
-					<li>0%</li>
-					<li>25%</li>
-					<li>50%</li>
-					<li>75%</li>
-					<li>100%</li>
-					<li class="special"><div id="opac_slider"></div></li>
-				</ul>
+
+			<div class="color_tool" id="tool_opacity" title="Change selected item opacity">
+				<label>
+					<span id="group_opacityLabel" class="icon_label"></span>
+					<input id="group_opacity" size="3" value="100" type="text"/>
+				</label>
+				<div id="opacity_dropdown" class="dropdown">
+					<button></button>
+					<ul>
+						<li>0%</li>
+						<li>25%</li>
+						<li>50%</li>
+						<li>75%</li>
+						<li>100%</li>
+						<li class="special"><div id="opac_slider"></div></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 
@@ -526,10 +574,10 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 	<div id="tools_bottom_3">
 		<div id="palette_holder"><div id="palette" title="Click to change fill color, shift-click to change stroke color"></div></div>
 	</div>
-	<div id="copyright"><span id="copyrightLabel">Powered by</span> <a href="http://svg-edit.googlecode.com/" target="_blank">SVG-edit v2.6-preAlpha</a></div>
+	<!-- <div id="copyright"><span id="copyrightLabel">Powered by</span> <a href="http://svg-edit.googlecode.com/" target="_blank">SVG-edit v2.6-beta</a></div> -->
 </div>
 
-<div id="option_lists">
+<div id="option_lists" class="dropdown">
 	<ul id="linejoin_opts">
 		<li class="tool_button current" id="linejoin_miter" title="Linejoin: Miter"></li>
 		<li class="tool_button" id="linejoin_round" title="Linejoin: Round"></li>
@@ -559,7 +607,7 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 </div> <!-- svg_editor -->
 
 <div id="svg_source_editor">
-	<div id="svg_source_overlay"></div>
+	<div class="overlay"></div>
 	<div id="svg_source_container">
 		<div id="tool_source_back" class="toolbar_button">
 			<button id="tool_source_save">Apply Changes</button>
@@ -575,8 +623,9 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 	</div>
 </div>
 
+
 <div id="svg_docprops">
-	<div id="svg_docprops_overlay"></div>
+	<div class="overlay"></div>
 	<div id="svg_docprops_container">
 		<div id="tool_docprops_back" class="toolbar_button">
 			<button id="tool_docprops_save">OK</button>
@@ -589,15 +638,15 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 			<label>
 				<span id="svginfo_title">Title:</span>
 				<input type="text" id="canvas_title"/>
-			</label>			
-	
+			</label>
+
 			<fieldset id="change_resolution">
 				<legend id="svginfo_dim">Canvas Dimensions</legend>
 
 				<label><span id="svginfo_width">width:</span> <input type="text" id="canvas_width" size="6"/></label>
-					
+
 				<label><span id="svginfo_height">height:</span> <input type="text" id="canvas_height" size="6"/></label>
-				
+
 				<label>
 					<select id="resolution">
 						<option id="selectedPredefined" selected="selected">Select predefined:</option>
@@ -615,12 +664,21 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 				<legend id="includedImages">Included Images</legend>
 				<label><input type="radio" name="image_opt" value="embed" checked="checked"/> <span id="image_opt_embed">Embed data (local files)</span> </label>
 				<label><input type="radio" name="image_opt" value="ref"/> <span id="image_opt_ref">Use file reference</span> </label>
-			</fieldset>			
-
-
+			</fieldset>
 		</fieldset>
 
-		<fieldset id="svg_docprops_prefs">
+	</div>
+</div>
+
+<div id="svg_prefs">
+	<div class="overlay"></div>
+	<div id="svg_prefs_container">
+		<div id="tool_prefs_back" class="toolbar_button">
+			<button id="tool_prefs_save">OK</button>
+			<button id="tool_prefs_cancel">Cancel</button>
+		</div>
+
+		<fieldset>
 			<legend id="svginfo_editor_prefs">Editor Preferences</legend>
 
 			<label><span id="svginfo_lang">Language:</span>
@@ -635,12 +693,15 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 					<option id="lang_fr" value="fr">Français</option>
 					<option id="lang_fy" value="fy">Frysk</option>
 					<option id="lang_hi" value="hi">&#2361;&#2367;&#2344;&#2381;&#2342;&#2368;, &#2361;&#2367;&#2306;&#2342;&#2368;</option>
+					<option id="lang_it" value="it">Italiano</option>
 					<option id="lang_ja" value="ja">日本語</option>
 					<option id="lang_nl" value="nl">Nederlands</option>
+					<option id="lang_pl" value="pl">Polski</option>
 					<option id="lang_pt-BR" value="pt-BR">Português (BR)</option>
-					<option id="lang_ro" value="ro">Româneşte</option>
+					<option id="lang_ro" value="ro">Română</option>
 					<option id="lang_ru" value="ru">Русский</option>
 					<option id="lang_sk" value="sk">Slovenčina</option>
+					<option id="lang_sl" value="sl">Slovenščina</option>
 					<option id="lang_zh-TW" value="zh-TW">繁體中文</option>
 				</select>
 			</label>
@@ -660,11 +721,44 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 				<label><span id="svginfo_bg_url">URL:</span> <input type="text" id="canvas_bg_url"/></label>
 				<p id="svginfo_bg_note">Note: Background will not be saved with image.</p>
 			</fieldset>
-			
+
 			<fieldset id="change_grid">
 				<legend id="svginfo_grid_settings">Grid</legend>
-				<label><span id="svginfo_snap_onoff">Snapping on/off</span><input type="checkbox" value="snapping_on" id="grid_snapping_on"></label>
+				<label><span id="svginfo_snap_onoff">Snapping on/off</span><input type="checkbox" value="snapping_on" id="grid_snapping_on"/></label>
 				<label><span id="svginfo_snap_step">Snapping Step-Size:</span> <input type="text" id="grid_snapping_step" size="3" value="10"/></label>
+				<label><span id="svginfo_grid_color">Grid color:</span> <input type="text" id="grid_color" size="3" value="#000"/></label>
+			</fieldset>
+
+			<fieldset id="units_rulers">
+				<legend id="svginfo_units_rulers">Units &amp; Rulers</legend>
+				<label><span id="svginfo_rulers_onoff">Show rulers</span><input type="checkbox" value="show_rulers" id="show_rulers" checked="checked"/></label>
+				<label>
+					<span id="svginfo_unit">Base Unit:</span>
+					<select id="base_unit">
+						<option value="px">Pixels</option>
+						<option value="cm">Centimeters</option>
+						<option value="mm">Millimeters</option>
+						<option value="in">Inches</option>
+						<option value="pt">Points</option>
+						<option value="pc">Picas</option>
+						<option value="em">Ems</option>
+						<option value="ex">Exs</option>
+					</select>
+				</label>
+				<!-- Should this be an export option instead? -->
+<!-- 
+				<span id="svginfo_unit_system">Unit System:</span>
+				<label>
+					<input type="radio" name="unit_system" value="single" checked="checked"/>
+					<span id="svginfo_single_type_unit">Single type unit</span>
+					<small id="svginfo_single_type_unit_sub">CSS unit type is set on root element. If a different unit type is entered in a text field, it is converted back to user units on export.</small>
+				</label>
+				<label>
+					<input type="radio" name="unit_system" value="multi"/>
+					<span id="svginfo_multi_units">Multiple CSS units</span> 
+					<small id="svginfo_single_type_unit_sub">Attributes can be given different CSS units, which may lead to inconsistant results among viewers.</small>
+				</label>
+ -->
 			</fieldset>
 
 		</fieldset>
@@ -673,7 +767,7 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 </div>
 
 <div id="dialog_box">
-	<div id="dialog_box_overlay"></div>
+	<div class="overlay"></div>
 	<div id="dialog_container">
 		<div id="dialog_content"></div>
 		<div id="dialog_buttons"></div>
@@ -688,10 +782,10 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 	<li class="separator"><a href="#delete">Delete</a></li>
 	<li class="separator"><a href="#group">Group<span class="shortcut">G</span></a></li>
 	<li><a href="#ungroup">Ungroup<span class="shortcut">G</span></a></li>
-        <li class="separator"><a href="#move_front">Bring to Front<span class="shortcut">SHFT+CTRL+]</span></a></li>
+	<li class="separator"><a href="#move_front">Bring to Front<span class="shortcut">SHFT+CTRL+]</span></a></li>
 	<li><a href="#move_up">Bring Forward<span class="shortcut">CTRL+]</span></a></li>
 	<li><a href="#move_down">Send Backward<span class="shortcut">CTRL+[</span></a></li>
-        <li><a href="#move_back">Send to Back<span class="shortcut">SHFT+CTRL+[</span></a></li>
+	<li><a href="#move_back">Send to Back<span class="shortcut">SHFT+CTRL+[</span></a></li>
 </ul>
 
 
@@ -704,3 +798,4 @@ script type="text/javascript" src="locale/locale.min.js"></script-->
 
 </body>
 </html>
+

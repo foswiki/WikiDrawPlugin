@@ -29,8 +29,8 @@ use Foswiki::Plugins ();    # For the API version
 use Foswiki::Sandbox ();
 use Assert;
 
-our $VERSION           = '$Rev$';
-our $RELEASE           = '1.0.2';
+our $VERSION           = '2.0';
+our $RELEASE           = '4 Jan 2017';
 our $SHORTDESCRIPTION  = 'create or annotate images and save as svg and png';
 our $NO_PREFS_IN_TOPIC = 1;
 
@@ -59,39 +59,12 @@ sub initPlugin {
             my $jqueryVersion = $Foswiki::cfg{JQueryPlugin}{JQueryVersion}
               || "jquery-1.3.2";
             $jqueryVersion =~
-              /jquery-(\d*\.\d\.).*/;    #only care about major.minor
+              /jquery-(\d*\.\d*)\..*/;    #only care about major.minor
             $jqueryVersion = $1;
-            if ( ( Foswiki::Func::getContext()->{'JQueryPluginEnabled'} == 1 )
-                and defined($jqueryVersion)
-                and ( $jqueryVersion >= 1.4 ) )
-            {
-
-          #all ok, add JQUERY-1.4 zone to be a comment, and require JQUERYPLUGIN
-                Foswiki::Func::addToZone(
-                    'script',                            'JQUERY-1.4',
-                    '<!-- using !JQueryPlugins 1.4 -->', 'JQUERYPLUGIN'
-                );
-            }
-            else {
-
-#replace the JQUERY zone, and add the JQUERY-1.4 zone to point to jquery-script-fallback
-#prevent JQueryPlugin from messing around
-                Foswiki::Func::addToZone( 'script', 'TinyMCEPlugin',
-                    '<!-- disable TinyMCEPlugin -->' );
-                Foswiki::Func::addToZone(
-                    'script',                              'JQUERYPLUGIN',
-                    '<!-- disable JQUERYPLUGIN smile -->', 'JQUERY-1.4'
-                );
-                Foswiki::Func::loadTemplate('wikidraw');
-                my $wikiDrawJQuery = Foswiki::Func::expandTemplate(
-                    'wikidraw-script-jquery-fallback');
-
-                Foswiki::Func::addToZone( 'script', 'JQUERY-1.4',
-                    $wikiDrawJQuery );
-                Foswiki::Func::addToZone( 'script', 'JQUERYPLUGIN::LIVEQUERY',
-                    '<!-- disable JQUERYPLUGIN::LIVEQUERY smile -->' );
-
-            }
+            Foswiki::Func::addToZone(
+                'script',                            'JQUERY-1.4',
+                '<!-- using !JQueryPlugins 1.4 -->', 'JQUERYPLUGIN'
+            );
         }
     }
 
@@ -1327,7 +1300,7 @@ issues. Please use =afterUploadHandler()= instead.
 __END__
 Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 
-Copyright (C) 2008-2010 Foswiki Contributors. Foswiki Contributors
+Copyright (C) 2008-2017 Foswiki Contributors. Foswiki Contributors
 are listed in the AUTHORS file in the root of this distribution.
 NOTE: Please extend that file, not this notice.
 

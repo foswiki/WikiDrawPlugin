@@ -15,27 +15,11 @@
    }% %DRAWING%]] - <span class="wikiDrawComment">%COMMENT%</span>
 </div>
 %ADDTOZONE{ 
-   "script"
-   id="pngie-init" 
-   requires="JQUERYPLUGIN"
-   text="%TMPL:P{jquery-pngie-init}%"
-   
-}%%ADDTOZONE{ 
    "head"
    id="wikidraw-css" 
    text="%TMPL:P{wikidraw-view-css}%"
    
 }%%TMPL:END%
-
-%{ -------------------------------------- TODO make IE specific , and / or move into JQueryPlugin. }%
-%TMPL:DEF{jquery-pngie-init}%<script type='text/javascript' src='%PUBURL%/%SYSTEMWEB%/WikiDrawPlugin/pngie/jquery.pngie.min.js?version=0.1'></script>
-<script>
-$(document).pngie({
-blankgif:'%PUBURL%/%SYSTEMWEB%/WikiDrawPlugin/pngie/Transparent.gif',
-sizingMethod:'crop'
- });
-</script>%TMPL:END%
-
 
 %{ ---------------------------- }%
 %TMPL:DEF{wikidraw-view-css}%<style>
@@ -61,12 +45,6 @@ border: 0px solid gray;
 }%
 </div>
 %ADDTOZONE{ 
-   "script"
-   id="pngie-init" 
-   requires="JQUERYPLUGIN"
-   text="%TMPL:P{jquery-pngie-init}%"
-   
-}%%ADDTOZONE{ 
    "head"
    id="wikidraw-imageplugin-css" 
    text="%TMPL:P{wikidraw-view-css-imageplugin}%"
